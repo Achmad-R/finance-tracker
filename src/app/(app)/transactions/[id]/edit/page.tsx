@@ -10,7 +10,7 @@ export default async function EditTransactionPage({
   searchParams,
 }: {
   params: { id: string };
-  searchParams: { error?: string; saved?: string };
+  searchParams: { error?: string };
 }) {
   const supabase = createClient();
   const [{ data: tx }, { data: accounts }, { data: categories }] = await Promise.all([
@@ -37,12 +37,6 @@ export default async function EditTransactionPage({
       {searchParams?.error === "1" && (
         <p className="mb-4 rounded-md bg-negative/10 px-3 py-2 text-sm text-negative">
           Gagal menyimpan transaksi. Periksa kembali isian, lalu coba lagi.
-        </p>
-      )}
-
-      {searchParams?.saved === "1" && (
-        <p className="mb-4 rounded-md bg-positive/10 px-3 py-2 text-sm text-positive">
-          Transaksi berhasil disimpan.
         </p>
       )}
 

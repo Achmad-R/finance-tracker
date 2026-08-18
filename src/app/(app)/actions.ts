@@ -221,7 +221,7 @@ export async function updateTransaction(formData: FormData) {
     .eq("id", id)
     .eq("user_id", userId);
   if (error) redirect(`/transactions/${id}/edit?error=1`);
-  redirect(`/transactions/${id}/edit?saved=1`);
+  redirect("/transactions");
   revalidatePath("/transactions");
   revalidatePath("/dashboard");
   revalidatePath("/reports");
