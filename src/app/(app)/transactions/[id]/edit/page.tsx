@@ -7,8 +7,10 @@ import { updateTransaction } from "../../../actions";
 
 export default async function EditTransactionPage({
   params,
+  searchParams,
 }: {
   params: { id: string };
+  searchParams: { error?: string; saved?: string };
 }) {
   const supabase = createClient();
   const [{ data: tx }, { data: accounts }, { data: categories }] = await Promise.all([
@@ -31,6 +33,18 @@ export default async function EditTransactionPage({
         <ArrowLeft size={16} /> Kembali
       </Link>
       <PageHeader title="Edit Transaksi" />
+
+      {searchParams?.error === "1" && (
+        <p className="mb-4 rounded-md bg-negative/10 px-3 py-2 text-sm text-negative">
+          Gagal menyimpan transaksi. Periksa kembali isian, lalu coba lagi.
+        </p>
+      )}
+
+      {searchParams?.saved === "1" && (
+        <p className="mb-4 rounded-md bg-positive/10 px-3 py-2 text-sm text-positive">
+          Transaksi berhasil disimpan.
+        </p>
+      )}
 
       <Card className="max-w-md">
         <form action={updateTransaction} className="space-y-3">

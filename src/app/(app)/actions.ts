@@ -201,12 +201,13 @@ export async function updateTransaction(formData: FormData) {
     occurred_at: field(formData, "occurred_at"),
     note: field(formData, "note"),
   });
-  if (!parsed.success) return;
+  if (!parsed.success || (parsed.data.type === "transfer" && !parsed.data.to_account_id)) {
+    redirect(`/transactions/${id}/edit?error=1`);
+  }
   const d = parsed.data;
-  if (d.type === "transfer" && !d.to_account_id) return;
 
   const supabase = createClient();
-  await supabase
+  const { error } = await supabase
     .from("transactions")
     .update({
       type: d.type,
@@ -219,6 +220,8 @@ export async function updateTransaction(formData: FormData) {
     })
     .eq("id", id)
     .eq("user_id", userId);
+  if (error) redirect(`/transactions/${id}/edit?error=1`);
+  redirect(`/transactions/${id}/edit?saved=1`);
   revalidatePath("/transactions");
   revalidatePath("/dashboard");
   revalidatePath("/reports");

@@ -1,0 +1,73 @@
+- generic [ref=f5e2]:
+  - complementary [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - generic [ref=f5e5]: Finance
+      - button "Ganti tema" [ref=f5e11] [cursor=pointer]
+    - navigation [ref=f5e14]:
+      - link "Dashboard" [ref=f5e15] [cursor=pointer]:
+        - /url: /dashboard
+      - link "Akun" [ref=f5e21] [cursor=pointer]:
+        - /url: /accounts
+      - link "Transaksi" [ref=f5e25] [cursor=pointer]:
+        - /url: /transactions
+      - link "Kategori" [ref=f5e29] [cursor=pointer]:
+        - /url: /categories
+      - link "Budget" [ref=f5e34] [cursor=pointer]:
+        - /url: /budgets
+      - link "Laporan" [ref=f5e39] [cursor=pointer]:
+        - /url: /reports
+    - button "Keluar" [ref=f5e43] [cursor=pointer]
+  - main [ref=f5e47]:
+    - generic [ref=f5e48]:
+      - link "Kembali" [ref=f5e49] [cursor=pointer]:
+        - /url: /transactions
+      - heading "Edit Transaksi" [level=1] [ref=f5e53]
+      - generic [ref=f5e55]:
+        - generic [ref=f5e56]:
+          - generic [ref=f5e57]: Tipe
+          - combobox "Tipe" [ref=f5e58]:
+            - option "Pengeluaran" [selected]
+            - option "Pemasukan"
+            - option "Transfer"
+            - option "Saldo Awal"
+        - generic [ref=f5e59]:
+          - generic [ref=f5e60]: Akun
+          - combobox "Akun" [ref=f5e61]:
+            - option "Bank BCA" [selected]
+            - option "Dompet"
+            - option "Kartu Kredit"
+        - generic [ref=f5e62]:
+          - generic [ref=f5e63]: Ke akun (transfer)
+          - combobox "Ke akun (transfer)" [ref=f5e64]:
+            - option "—" [selected]
+            - option "Bank BCA"
+            - option "Dompet"
+            - option "Kartu Kredit"
+        - generic [ref=f5e65]:
+          - generic [ref=f5e66]: Kategori
+          - combobox "Kategori" [ref=f5e67]:
+            - option "—"
+            - option "Pemasukan"
+            - option "Makanan"
+            - option "Transport"
+            - option "Hiburan"
+            - option "Tagihan"
+            - option "Belanja"
+            - option "Kesehatan"
+            - option "Listrik" [selected]
+            - option "Internet"
+            - option "Bensin"
+            - option "Transportasi Umum"
+            - option "Restoran"
+        - generic [ref=f5e68]:
+          - generic [ref=f5e69]: Jumlah (Rp)
+          - spinbutton "Jumlah (Rp)" [ref=f5e70]: "400000"
+        - generic [ref=f5e71]:
+          - generic [ref=f5e72]: Tanggal
+          - textbox "Tanggal" [ref=f5e73]: 2026-08-09T19:00
+        - generic [ref=f5e74]:
+          - generic [ref=f5e75]: Catatan
+          - textbox "Catatan" [ref=f5e76]:
+            - /placeholder: Opsional
+            - text: Tagihan listrik (edit test)
+        - button "Simpan" [ref=f5e77] [cursor=pointer]

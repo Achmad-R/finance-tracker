@@ -76,13 +76,13 @@ export default async function DashboardPage() {
       )}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard label="Net Worth" value={formatIDR(netWorth * 100)} tone={netWorth >= 0 ? "positive" : "negative"} />
-        <StatCard label="Total Aset" value={formatIDR(totalAssets * 100)} />
-        <StatCard label="Total Liabilitas" value={formatIDR(totalLiabilities * 100)} tone="negative" />
+        <StatCard label="Net Worth" value={formatIDR(netWorth)} tone={netWorth >= 0 ? "positive" : "negative"} />
+        <StatCard label="Total Aset" value={formatIDR(totalAssets)} />
+        <StatCard label="Total Liabilitas" value={formatIDR(totalLiabilities)} tone="negative" />
         <StatCard
           label="Bulan ini"
-          value={formatIDR((current?.income ?? 0) * 100)}
-          hint={`Keluar ${formatIDR((current?.expense ?? 0) * 100)}`}
+          value={formatIDR(current?.income ?? 0)}
+          hint={`Keluar ${formatIDR(current?.expense ?? 0)}`}
         />
       </div>
 

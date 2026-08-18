@@ -104,7 +104,7 @@ export default async function TransactionsPage({
                             : "text-positive"
                         }`}
                       >
-                        {formatIDR(tx.amount * 100)}
+                        {formatIDR(tx.amount)}
                       </p>
                       <Badge tone="default">{typeLabel[tx.type]}</Badge>
                     </div>
@@ -227,7 +227,7 @@ export default async function TransactionsPage({
                   <p className="font-medium text-ink">{r.note || typeLabel[r.type]}</p>
                   <p className="text-xs text-secondary">
                     {accName.get(r.account_id)} · {r.frequency} ·{" "}
-                    {formatIDR(r.amount * 100)}
+                    {formatIDR(r.amount)}
                   </p>
                 </div>
                 <DeleteButton

@@ -37,7 +37,7 @@ export default async function AccountsPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <p className="tabular text-lg font-semibold text-ink">
-                      {formatIDR(acc.balance * 100)}
+                      {formatIDR(acc.balance)}
                     </p>
                     <Link
                       href={`/accounts/${acc.id}/edit`}

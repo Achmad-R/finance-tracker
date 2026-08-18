@@ -1,0 +1,90 @@
+- generic [active] [ref=f6e1]:
+  - alert [ref=f6e22]
+  - generic [ref=f6e23]:
+    - complementary [ref=f6e24]:
+      - generic [ref=f6e25]:
+        - generic [ref=f6e26]: Finance
+        - button "Ganti tema" [ref=f6e32] [cursor=pointer]
+      - navigation [ref=f6e35]:
+        - link "Dashboard" [ref=f6e36] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Akun" [ref=f6e42] [cursor=pointer]:
+          - /url: /accounts
+        - link "Transaksi" [ref=f6e46] [cursor=pointer]:
+          - /url: /transactions
+        - link "Kategori" [ref=f6e50] [cursor=pointer]:
+          - /url: /categories
+        - link "Budget" [ref=f6e55] [cursor=pointer]:
+          - /url: /budgets
+        - link "Laporan" [ref=f6e60] [cursor=pointer]:
+          - /url: /reports
+      - button "Keluar" [ref=f6e64] [cursor=pointer]
+    - main [ref=f6e68]:
+      - generic [ref=f6e69]:
+        - heading "Dashboard" [level=1] [ref=f6e71]
+        - generic [ref=f6e72]:
+          - generic [ref=f6e73]:
+            - paragraph [ref=f6e74]: Net Worth
+            - paragraph [ref=f6e75]: Rp 6.033.600.000
+          - generic [ref=f6e76]:
+            - paragraph [ref=f6e77]: Total Aset
+            - paragraph [ref=f6e78]: Rp 5.798.600.000
+          - generic [ref=f6e79]:
+            - paragraph [ref=f6e80]: Total Liabilitas
+            - paragraph [ref=f6e81]: "-Rp 235.000.000"
+          - generic [ref=f6e82]:
+            - paragraph [ref=f6e83]: Bulan ini
+            - paragraph [ref=f6e84]: Rp 1.200.000.000
+            - paragraph [ref=f6e85]: Keluar Rp 57.000.000
+        - generic [ref=f6e86]:
+          - generic [ref=f6e87]:
+            - heading "Tren Net Worth" [level=2] [ref=f6e88]
+            - generic [ref=f6e91]:
+              - img [ref=f6e92]:
+                - generic [ref=f6e97]:
+                  - generic [ref=f6e98]: 2026-05
+                  - generic [ref=f6e100]: 2026-06
+                  - generic [ref=f6e102]: 2026-07
+                  - generic [ref=f6e104]: 2026-08
+                - generic [ref=f6e107]:
+                  - generic [ref=f6e108]: 0jt
+                  - generic [ref=f6e110]: 15jt
+                  - generic [ref=f6e112]: 30jt
+                  - generic [ref=f6e114]: 45jt
+                  - generic [ref=f6e116]: 60jt
+              - generic:
+                - generic:
+                  - paragraph: 2026-07
+                  - list:
+                    - listitem: "value : Rp 37.206.000"
+          - generic [ref=f6e126]:
+            - heading "Cashflow Bulanan" [level=2] [ref=f6e127]
+            - generic [ref=f6e130]:
+              - img [ref=f6e131]:
+                - generic [ref=f6e136]:
+                  - generic [ref=f6e137]: 2026-05
+                  - generic [ref=f6e139]: 2026-06
+                  - generic [ref=f6e141]: 2026-07
+                  - generic [ref=f6e143]: 2026-08
+                - generic [ref=f6e146]:
+                  - generic [ref=f6e147]: 0jt
+                  - generic [ref=f6e149]: 4jt
+                  - generic [ref=f6e151]: 8jt
+                  - generic [ref=f6e153]: 12jt
+                  - generic [ref=f6e155]: 16jt
+              - list [ref=f6e180]:
+                - listitem [ref=f6e181]: Pemasukan
+                - listitem [ref=f6e184]: Pengeluaran
+          - generic [ref=f6e187]:
+            - heading "Pengeluaran per Kategori" [level=2] [ref=f6e188]
+            - generic [ref=f6e191]:
+              - img [ref=f6e192]:
+                - generic [ref=f6e201]:
+                  - generic [ref=f6e202]: "400000"
+                  - generic [ref=f6e205]: "140000"
+                  - generic [ref=f6e208]: "30000"
+              - list [ref=f6e212]:
+                - listitem [ref=f6e213]: Listrik
+                - listitem [ref=f6e216]: Makanan
+                - listitem [ref=f6e219]: Bensin
+  - generic [ref=f6e222]: 4jt

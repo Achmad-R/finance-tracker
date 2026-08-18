@@ -55,7 +55,7 @@ export default async function BudgetsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <p className="tabular text-sm text-ink">
-                        {formatIDR(spent * 100)} / {formatIDR(b.amount * 100)}
+                        {formatIDR(spent)} / {formatIDR(b.amount)}
                       </p>
                       <DeleteButton action={deleteBudget} id={b.id} label="Hapus budget" />
                     </div>
