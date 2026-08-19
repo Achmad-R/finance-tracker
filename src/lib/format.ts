@@ -12,7 +12,9 @@ export function formatIDR(sen: number): string {
     style: "currency",
     currency: "IDR",
     maximumFractionDigits: 0,
-  }).format(rupiah);
+  })
+    .format(rupiah)
+    .replace(/\s/g, "\u00A0");
 }
 
 export function monthKey(date: Date): string {
