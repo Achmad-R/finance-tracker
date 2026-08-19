@@ -3,6 +3,7 @@ import { Pencil } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { formatIDR } from "@/lib/format";
 import { Badge, Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
+import SubmitButton from "@/components/SubmitButton";
 import DeleteButton from "@/components/DeleteButton";
 import { createTransaction, deleteTransaction, deleteRecurring } from "../actions";
 
@@ -78,7 +79,7 @@ export default async function TransactionsPage({
             </span>
           </div>
           {!transactions || transactions.length === 0 ? (
-            <p className="text-sm text-secondary">Belum ada transaksi.</p>
+            <p className="text-sm text-secondary">Belum ada transaksi. Tambahkan transaksi baru di form di atas.</p>
           ) : (
             <ul className="divide-y divide-hairline">
               {transactions.map((tx) => (
@@ -177,7 +178,7 @@ export default async function TransactionsPage({
             </div>
             <div>
               <Label htmlFor="amount">Jumlah (Rp)</Label>
-              <Input id="amount" name="amount" type="number" min="0" step="100" required />
+              <Input id="amount" name="amount" type="number" inputMode="numeric" min="0" step="100" required />
             </div>
             <div>
               <Label htmlFor="occurred_at">Tanggal</Label>
@@ -187,7 +188,7 @@ export default async function TransactionsPage({
               <Label htmlFor="note">Catatan</Label>
               <Input id="note" name="note" placeholder="Opsional" />
             </div>
-            <Button>Tambah</Button>
+            <SubmitButton>Tambah</SubmitButton>
           </form>
         </Card>
       </div>

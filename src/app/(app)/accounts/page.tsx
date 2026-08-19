@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { deriveBalances } from "@/lib/aggregate";
 import { formatIDR } from "@/lib/format";
 import { Badge, Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
+import SubmitButton from "@/components/SubmitButton";
 import DeleteButton from "@/components/DeleteButton";
 import { createAccount, deleteAccount } from "../actions";
 
@@ -24,7 +25,7 @@ export default async function AccountsPage() {
         <Card className="lg:col-span-2">
           <h2 className="mb-3 text-sm font-semibold text-ink">Daftar Akun</h2>
           {balances.length === 0 ? (
-            <p className="text-sm text-secondary">Belum ada akun.</p>
+            <p className="text-sm text-secondary">Belum ada akun. Tambahkan akun pertama di form di atas.</p>
           ) : (
             <ul className="divide-y divide-hairline">
               {balances.map((acc) => (
@@ -71,7 +72,7 @@ export default async function AccountsPage() {
                 <option value="liability">Liabilitas (kartu kredit, pinjaman)</option>
               </Select>
             </div>
-            <Button>Tambah</Button>
+            <SubmitButton>Tambah</SubmitButton>
           </form>
         </Card>
       </div>

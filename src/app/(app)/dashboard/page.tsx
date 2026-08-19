@@ -67,7 +67,7 @@ export default async function DashboardPage() {
           <form action={seedDemo}>
             <button
               type="submit"
-              className="cursor-pointer rounded-lg bg-cta px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
+              className="cursor-pointer rounded-lg bg-cta-btn px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
             >
               Isi data demo
             </button>

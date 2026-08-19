@@ -24,7 +24,7 @@ export default function DeleteButton({
       }}
       title={label}
       aria-label={label}
-      className={`cursor-pointer text-negative transition-all duration-200 hover:opacity-70 disabled:opacity-50 ${className}`}
+      className={`cursor-pointer rounded-md text-negative transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 hover:opacity-70 disabled:opacity-50 ${className}`}
     >
       <Trash2 size={16} />
     </button>

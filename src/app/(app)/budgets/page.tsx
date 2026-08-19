@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { formatIDR, monthLabel } from "@/lib/format";
 import { Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
+import SubmitButton from "@/components/SubmitButton";
 import DeleteButton from "@/components/DeleteButton";
 import { createBudget, deleteBudget } from "../actions";
 
@@ -39,7 +40,7 @@ export default async function BudgetsPage() {
         <div className="space-y-4 lg:col-span-2">
           {bList.length === 0 ? (
             <Card>
-              <p className="text-sm text-secondary">Belum ada budget.</p>
+              <p className="text-sm text-secondary">Belum ada budget. Tambahkan budget di form di atas.</p>
             </Card>
           ) : (
             bList.map((b) => {
@@ -91,13 +92,13 @@ export default async function BudgetsPage() {
             </div>
             <div>
               <Label htmlFor="amount">Limit (Rp)</Label>
-              <Input id="amount" name="amount" type="number" min="0" step="100" required />
+              <Input id="amount" name="amount" type="number" inputMode="numeric" min="0" step="100" required />
             </div>
             <div>
               <Label htmlFor="month">Bulan</Label>
               <Input id="month" name="month" type="month" defaultValue={monthDefault} required />
             </div>
-            <Button>Tambah</Button>
+            <SubmitButton>Tambah</SubmitButton>
           </form>
         </Card>
       </div>

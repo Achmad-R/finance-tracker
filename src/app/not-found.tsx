@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="text-secondary">Halaman tidak ditemukan.</p>
       <Link
         href="/dashboard"
-        className="cursor-pointer rounded-lg bg-cta px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
+        className="cursor-pointer rounded-lg bg-cta-btn px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
       >
         Ke Dashboard
       </Link>

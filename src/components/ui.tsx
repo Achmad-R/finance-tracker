@@ -54,21 +54,27 @@ export function Button({
   variant = "primary",
   className = "",
   type = "submit",
+  disabled = false,
 }: {
   children: ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   type?: "submit" | "button";
+  disabled?: boolean;
 }) {
   const base =
-    "cursor-pointer rounded-lg px-4 py-2 font-semibold transition-all duration-200";
+    "cursor-pointer rounded-lg px-4 py-2 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50";
   const variants = {
-    primary: "bg-cta text-white hover:opacity-90",
+    primary: "bg-cta-btn text-white hover:opacity-90",
     secondary: "border border-hairline bg-surface text-ink hover:shadow-sm",
     ghost: "text-cta hover:bg-cta/10",
   };
   return (
-    <button type={type} className={`${base} ${variants[variant]} ${className}`}>
+    <button
+      type={type}
+      disabled={disabled}
+      className={`${base} ${variants[variant]} ${disabled ? "cursor-not-allowed opacity-60" : ""} ${className}`}
+    >
       {children}
     </button>
   );
@@ -86,7 +92,7 @@ export function Input({ id, ...props }: { id: string } & React.InputHTMLAttribut
   return (
     <input
       id={id}
-      className="w-full rounded-lg border border-hairline px-3 py-2 text-ink outline-none transition-colors focus:border-primary"
+      className="w-full rounded-lg border border-hairline px-3 py-2 text-ink outline-none transition-colors focus:border-cta focus:ring-2 focus:ring-cta/40"
       {...props}
     />
   );
@@ -100,7 +106,7 @@ export function Select({
   return (
     <select
       id={id}
-      className="w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-ink outline-none transition-colors focus:border-primary"
+      className="w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-ink outline-none transition-colors focus:border-cta focus:ring-2 focus:ring-cta/40"
       {...props}
     >
       {children}

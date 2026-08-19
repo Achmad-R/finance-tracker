@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
-import { Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
+import { Card, Input, Label, PageHeader, Select } from "@/components/ui";
+import SubmitButton from "@/components/SubmitButton";
 import { updateTransaction } from "../../../actions";
 
 export default async function EditTransactionPage({
@@ -35,7 +36,10 @@ export default async function EditTransactionPage({
       <PageHeader title="Edit Transaksi" />
 
       {searchParams?.error === "1" && (
-        <p className="mb-4 rounded-md bg-negative/10 px-3 py-2 text-sm text-negative">
+        <p
+          role="alert"
+          className="mb-4 rounded-md bg-negative/10 px-3 py-2 text-sm text-negative"
+        >
           Gagal menyimpan transaksi. Periksa kembali isian, lalu coba lagi.
         </p>
       )}
@@ -86,7 +90,7 @@ export default async function EditTransactionPage({
           </div>
           <div>
             <Label htmlFor="amount">Jumlah (Rp)</Label>
-            <Input id="amount" name="amount" type="number" min="0" step="100" defaultValue={amountRupiah} required />
+            <Input id="amount" name="amount" type="number" inputMode="numeric" min="0" step="100" defaultValue={amountRupiah} required />
           </div>
           <div>
             <Label htmlFor="occurred_at">Tanggal</Label>
@@ -96,7 +100,7 @@ export default async function EditTransactionPage({
             <Label htmlFor="note">Catatan</Label>
             <Input id="note" name="note" defaultValue={tx.note ?? ""} placeholder="Opsional" />
           </div>
-          <Button>Simpan</Button>
+          <SubmitButton>Simpan</SubmitButton>
         </form>
       </Card>
     </div>
