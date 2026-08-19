@@ -53,7 +53,7 @@ export default async function BudgetsPage() {
                       <p className="font-medium text-ink">{catName.get(b.category_id)}</p>
                       <p className="text-xs text-secondary">{monthLabel(b.month)}</p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       <p className="tabular text-sm text-ink">
                         {formatIDR(spent)} / {formatIDR(b.amount)}
                       </p>

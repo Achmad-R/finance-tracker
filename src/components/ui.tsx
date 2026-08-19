@@ -43,7 +43,7 @@ export function StatCard({
   return (
     <Card>
       <p className="text-sm text-secondary">{label}</p>
-      <p className={`mt-1 text-2xl font-semibold tabular ${toneClass}`}>{value}</p>
+      <p className={`mt-1 text-xl font-semibold tabular sm:text-2xl ${toneClass}`}>{value}</p>
       {hint && <p className="mt-1 text-xs text-secondary">{hint}</p>}
     </Card>
   );

@@ -28,14 +28,17 @@ export default async function AccountsPage() {
           ) : (
             <ul className="divide-y divide-hairline">
               {balances.map((acc) => (
-                <li key={acc.id} className="flex items-center justify-between py-3">
-                  <div>
-                    <p className="font-medium text-ink">{acc.name}</p>
+                <li
+                  key={acc.id}
+                  className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="flex min-w-0 items-center gap-2">
+                    <p className="truncate font-medium text-ink">{acc.name}</p>
                     <Badge tone={acc.type === "asset" ? "positive" : "negative"}>
                       {acc.type === "asset" ? "Aset" : "Liabilitas"}
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between gap-3 sm:justify-end">
                     <p className="tabular text-lg font-semibold text-ink">
                       {formatIDR(acc.balance)}
                     </p>

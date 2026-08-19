@@ -55,7 +55,7 @@ export default async function TransactionsPage({
     <div>
       <PageHeader title="Transaksi" />
 
-      <form method="get" className="mb-4 flex items-end gap-3">
+      <form method="get" className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:gap-3">
         <div>
           <Label htmlFor="type">Filter tipe</Label>
           <Select id="type" name="type" defaultValue={typeFilter ?? "all"}>
@@ -82,12 +82,15 @@ export default async function TransactionsPage({
           ) : (
             <ul className="divide-y divide-hairline">
               {transactions.map((tx) => (
-                <li key={tx.id} className="flex items-center justify-between py-3">
-                  <div>
-                    <p className="font-medium text-ink">
+                <li
+                  key={tx.id}
+                  className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-ink">
                       {tx.note || typeLabel[tx.type] || tx.type}
                     </p>
-                    <p className="text-xs text-secondary">
+                    <p className="truncate text-xs text-secondary">
                       {accName.get(tx.account_id)}
                       {tx.to_account_id ? ` → ${accName.get(tx.to_account_id)}` : ""}
                       {tx.category_id ? ` · ${catName.get(tx.category_id)}` : ""}
@@ -95,7 +98,7 @@ export default async function TransactionsPage({
                       {new Date(tx.occurred_at).toLocaleDateString("id-ID")}
                     </p>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between gap-3 sm:justify-end">
                     <div className="text-right">
                       <p
                         className={`tabular font-semibold ${
@@ -222,10 +225,10 @@ export default async function TransactionsPage({
         ) : (
           <ul className="divide-y divide-hairline">
             {rules.map((r) => (
-              <li key={r.id} className="flex items-center justify-between py-3">
-                <div>
-                  <p className="font-medium text-ink">{r.note || typeLabel[r.type]}</p>
-                  <p className="text-xs text-secondary">
+              <li key={r.id} className="flex items-center justify-between gap-2 py-3">
+                <div className="min-w-0">
+                  <p className="truncate font-medium text-ink">{r.note || typeLabel[r.type]}</p>
+                  <p className="truncate text-xs text-secondary">
                     {accName.get(r.account_id)} · {r.frequency} ·{" "}
                     {formatIDR(r.amount)}
                   </p>
@@ -234,6 +237,7 @@ export default async function TransactionsPage({
                   action={deleteRecurring}
                   id={r.id}
                   label="Hapus aturan"
+                  className="shrink-0"
                 />
               </li>
             ))}
