@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --font-sans: "IBM Plex Sans", system-ui, sans-serif;
   --bg: #fafafa;
   --surface: #ffffff;
@@ -12,6 +13,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --bg: #0a0a0b;
   --surface: #18181b;
   --ink: #fafafa;
