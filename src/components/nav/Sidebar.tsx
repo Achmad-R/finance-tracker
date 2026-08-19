@@ -30,7 +30,7 @@ export default function Sidebar() {
     <aside className="w-full shrink-0 border-b border-hairline bg-surface p-3 lg:flex lg:w-60 lg:flex-col lg:border-b-0 lg:border-r lg:p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-card bg-cta-btn text-white">
+          <div className="flex h-9 w-9 items-center justify-center rounded-card bg-cta text-white">
             <Wallet size={18} />
           </div>
           <span className="hidden text-lg font-semibold text-ink min-[360px]:inline">
@@ -43,7 +43,7 @@ export default function Sidebar() {
             <button
               type="submit"
               aria-label="Keluar"
-              className="flex cursor-pointer items-center rounded-lg p-2 text-secondary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 hover:bg-negative/10 hover:text-negative"
+              className="flex cursor-pointer items-center rounded-lg p-2 text-secondary transition-colors duration-200 hover:bg-negative/10 hover:text-negative"
             >
               <LogOut size={18} />
             </button>
@@ -58,7 +58,7 @@ export default function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`flex shrink-0 cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 ${
+              className={`flex shrink-0 cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                 active
                   ? "bg-cta/10 text-cta"
                   : "text-secondary hover:bg-hairline hover:text-ink"
@@ -74,7 +74,7 @@ export default function Sidebar() {
       <form action={signOut} className="mt-4 hidden lg:block">
         <button
           type="submit"
-          className="flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-secondary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50 hover:bg-negative/10 hover:text-negative"
+          className="flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-secondary transition-colors duration-200 hover:bg-negative/10 hover:text-negative"
         >
           <LogOut size={18} />
           Keluar

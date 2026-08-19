@@ -1,7 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import type { Category } from "@/lib/types";
 import { Badge, Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
-import SubmitButton from "@/components/SubmitButton";
 import DeleteButton from "@/components/DeleteButton";
 import { createCategory, deleteCategory } from "../actions";
 
@@ -48,7 +47,7 @@ export default async function CategoriesPage() {
         <Card className="lg:col-span-2">
           <h2 className="mb-3 text-sm font-semibold text-ink">Struktur</h2>
           {tree.length === 0 ? (
-            <p className="text-sm text-secondary">Belum ada kategori. Tambahkan kategori di form di atas.</p>
+            <p className="text-sm text-secondary">Belum ada kategori.</p>
           ) : (
             renderNodes(tree)
           )}
@@ -79,7 +78,7 @@ export default async function CategoriesPage() {
                 ))}
               </Select>
             </div>
-            <SubmitButton>Tambah</SubmitButton>
+            <Button>Tambah</Button>
           </form>
         </Card>
       </div>

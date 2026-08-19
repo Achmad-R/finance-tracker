@@ -2,8 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
-import { Card, Input, Label, PageHeader, Select } from "@/components/ui";
-import SubmitButton from "@/components/SubmitButton";
+import { Button, Card, Input, Label, PageHeader, Select } from "@/components/ui";
 import { updateAccount } from "../../../actions";
 
 export default async function EditAccountPage({
@@ -44,7 +43,7 @@ export default async function EditAccountPage({
               <option value="liability">Liabilitas</option>
             </Select>
           </div>
-          <SubmitButton>Simpan</SubmitButton>
+          <Button>Simpan</Button>
         </form>
       </Card>
     </div>

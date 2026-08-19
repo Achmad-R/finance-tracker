@@ -10,11 +10,6 @@
   --ink: #09090b;
   --secondary: #3f3f46;
   --hairline: #e2e8f0;
-  --cta: #1d4ed8;
-  --cta-btn: #2563eb;
-  --positive: #047857;
-  --negative: #be123c;
-  --warning: #b45309;
 }
 
 .dark {
@@ -24,11 +19,6 @@
   --ink: #fafafa;
   --secondary: #a1a1aa;
   --hairline: #27272a;
-  --cta: #60a5fa;
-  --cta-btn: #2563eb;
-  --positive: #34d399;
-  --negative: #fb7185;
-  --warning: #fbbf24;
 }
 
 html,

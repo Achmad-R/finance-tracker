@@ -14,7 +14,7 @@ export default function LoginPage({
     <main className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-md rounded-card border border-hairline bg-surface p-8 shadow-md">
         <div className="mb-6 flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-card bg-cta-btn text-white">
+          <div className="flex h-10 w-10 items-center justify-center rounded-card bg-cta text-white">
             <Wallet size={20} />
           </div>
           <div>
@@ -63,7 +63,7 @@ export default function LoginPage({
           </div>
           <button
             type="submit"
-            className="w-full cursor-pointer rounded-lg bg-cta-btn px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
+            className="w-full cursor-pointer rounded-lg bg-cta px-4 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
           >
             Masuk
           </button>
